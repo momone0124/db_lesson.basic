@@ -45,7 +45,15 @@ INSERT INTO reports (person_id, content) VALUES
 -- Q4: department_id の NULL を更新
 UPDATE people
 SET department_id = 1
-WHERE department_id IS NULL;
+ WHERE department_id IS NULL AND age < 25;
+
+UPDATE people
+SET department_id = 2
+WHERE department_id IS NULL ANd age >= 25 AND age < 35;
+
+UPDATE people
+SET department_id = 3
+WHERE department_id IS NULL AND age >= 35;
 
 -- Q5: 男性の名前と年齢を年齢降順で取得
 SELECT name, age
